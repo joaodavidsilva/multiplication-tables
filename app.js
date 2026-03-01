@@ -355,6 +355,8 @@ function renderCalculate() {
                     <input type="text" inputmode="numeric" pattern="[0-9]*" 
                            class="hidden-input" id="hidden-input">
                     
+                    <button class="submit-btn" id="submit-btn" disabled>Verificar</button>
+                    
                     <div id="feedback-container"></div>
                 </div>
             </div>
@@ -385,6 +387,20 @@ function renderCalculate() {
     hiddenInput.addEventListener('input', (e) => {
         appState.userAnswer = e.target.value.replace(/[^0-9]/g, '');
         viewbox.textContent = appState.userAnswer || '?';
+        
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.disabled = appState.userAnswer === '';
+        
+        // Auto-submit when answer length matches correct result
+        const account = appState.calculateAccounts[appState.calculateIndex];
+        if (appState.userAnswer.length === String(account.result).length) {
+            submitAnswer();
+        }
+    });
+    
+    document.getElementById('submit-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        submitAnswer();
     });
     
     hiddenInput.addEventListener('keydown', (e) => {

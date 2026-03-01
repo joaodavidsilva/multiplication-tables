@@ -129,24 +129,28 @@ body {
 
 .tables-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
-    max-width: 320px;
+    max-width: 300px;
     margin: 0 auto 32px;
 }
 
 .table-btn {
-    aspect-ratio: 1;
+    width: 64px;
+    height: 64px;
     border: 2px solid var(--border);
     background: var(--bg);
     border-radius: var(--radius-sm);
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     color: var(--text);
     cursor: pointer;
     transition: var(--transition);
     box-shadow: var(--shadow);
     -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .table-btn:hover {
@@ -326,8 +330,32 @@ body {
     animation: incorrectShake 0.4s ease;
 }
 
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 16px;
+}
+
+.submit-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--border);
+}
+
 @keyframes correctPulse {
-    0%, transform: scale( 100% {1); }
+    0%, 100% { transform: scale(1); }
     50% { transform: scale(1.02); }
 }
 
@@ -634,6 +662,18 @@ body {
         border-left: 1px solid var(--border);
         border-right: 1px solid var(--border);
     }
+
+    .tables-grid {
+        max-width: 360px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .table-btn {
+        width: 72px;
+        height: 72px;
+        font-size: 28px;
+    }
+}
 
     .tables-grid {
         max-width: 400px;
