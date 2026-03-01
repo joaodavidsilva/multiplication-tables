@@ -130,18 +130,20 @@ body {
 .tables-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    max-width: 300px;
+    gap: 10px;
+    max-width: 280px;
     margin: 0 auto 32px;
 }
 
 .table-btn {
-    width: 64px;
-    height: 64px;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 64px;
+    max-height: 64px;
     border: 2px solid var(--border);
     background: var(--bg);
     border-radius: var(--radius-sm);
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
     color: var(--text);
     cursor: pointer;
@@ -169,12 +171,36 @@ body {
     transform: scale(0.95);
 }
 
+.menu-card {
+    background: var(--bg);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+
+.menu-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4px;
+    color: var(--text);
+}
+
+.menu-subtitle {
+    font-size: 14px;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
 .action-buttons {
     display: flex;
     flex-direction: column;
     gap: 12px;
     max-width: 320px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .action-btn {
@@ -187,6 +213,7 @@ body {
     transition: var(--transition);
     -webkit-tap-highlight-color: transparent;
     box-shadow: var(--shadow);
+    width: 100%;
 }
 
 .action-btn:active {
@@ -205,6 +232,7 @@ body {
 .action-btn.secondary {
     background: var(--bg-secondary);
     color: var(--text);
+    border: 1px solid var(--border);
 }
 
 .action-btn:disabled {
@@ -230,29 +258,29 @@ body {
 }
 
 .memorize-card {
-    background: var(--bg);
+    background: var(--bg-secondary);
     border-radius: var(--radius-lg);
-    padding: 48px 32px;
+    padding: 40px 24px;
     text-align: center;
     box-shadow: var(--shadow-lg);
     width: 100%;
-    max-width: 360px;
+    max-width: 320px;
     user-select: none;
     -webkit-user-select: none;
 }
 
 .memorize-equation {
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 700;
     color: var(--text);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .memorize-result {
     font-size: 56px;
     font-weight: 800;
     color: var(--primary);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .memorize-hint {
@@ -278,13 +306,13 @@ body {
 }
 
 .calculate-card {
-    background: var(--bg);
+    background: var(--bg-secondary);
     border-radius: var(--radius-lg);
-    padding: 32px 24px;
+    padding: 28px 20px;
     text-align: center;
     box-shadow: var(--shadow-lg);
     width: 100%;
-    max-width: 360px;
+    max-width: 320px;
 }
 
 .calculate-equation {
@@ -664,14 +692,15 @@ body {
     }
 
     .tables-grid {
-        max-width: 360px;
+        max-width: 340px;
         grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
     }
 
     .table-btn {
-        width: 72px;
-        height: 72px;
-        font-size: 28px;
+        max-width: 72px;
+        max-height: 72px;
+        font-size: 26px;
     }
 }
 

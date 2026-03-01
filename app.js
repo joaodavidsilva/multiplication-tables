@@ -155,27 +155,29 @@ function renderMenu() {
     const app = document.getElementById('app');
     app.innerHTML = `
         <div id="menu-screen" class="screen active">
-            <h1 class="menu-title">Tabuadas</h1>
-            <p class="menu-subtitle">Seleciona as tabuadas que queres praticar</p>
-            
-            <div class="tables-grid" id="tables-grid">
-                ${[1,2,3,4,5,6,7,8,9,10,11,12].map(n => `
-                    <button class="table-btn" data-table="${n}">${n}</button>
-                `).join('')}
-            </div>
-            
-            <p class="selection-hint" id="selection-hint">Nenhuma tabuada selecionada</p>
-            
-            <div class="action-buttons">
-                <button class="action-btn primary" id="btn-memorizar" disabled>
-                    Memorizar
-                </button>
-                <button class="action-btn primary" id="btn-calcular" disabled>
-                    Calcular
-                </button>
-                <button class="action-btn secondary" id="btn-estatisticas">
-                    Estatísticas
-                </button>
+            <div class="menu-card">
+                <h1 class="menu-title">Tabuadas</h1>
+                <p class="menu-subtitle">Seleciona as tabuadas que queres praticar</p>
+                
+                <div class="tables-grid" id="tables-grid">
+                    ${[1,2,3,4,5,6,7,8,9,10,11,12].map(n => `
+                        <button class="table-btn" data-table="${n}">${n}</button>
+                    `).join('')}
+                </div>
+                
+                <p class="selection-hint" id="selection-hint">Nenhuma tabuada selecionada</p>
+                
+                <div class="action-buttons">
+                    <button class="action-btn primary" id="btn-memorizar" disabled>
+                        Memorizar
+                    </button>
+                    <button class="action-btn primary" id="btn-calcular" disabled>
+                        Calcular
+                    </button>
+                    <button class="action-btn secondary" id="btn-estatisticas">
+                        Estatísticas
+                    </button>
+                </div>
             </div>
         </div>
     `;
